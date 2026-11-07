@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/98.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/brainfuck.css">
+	<title>JavaScript Brainfuck interpreter</title>
+</head>
+
+<body>
+	<div class="window main-window">
+		<div class="title-bar">
+			<div class="title-bar-text">Brainfuck interpreter</div>
+			<div class="title-bar-controls">
+				<button aria-label="Minimize" tabindex="-1"></button>
+				<button aria-label="Maximize" tabindex="-1"></button>
+				<button aria-label="Close" tabindex="-1"></button>
+			</div>
+		</div>
+		<div class="window-body">
+			<form action="" method="post" id="input-form">
+				<fieldset>
+					<legend>Brainfuck input</legend>
+					<textarea name="brainfuck_input" id="brainfuck-input">+++++ +++++             initialize counter (cell #0) to 10
+[                       use loop to set the next four cells to 70/100/30/10
+    &gt; +++++ ++              add  7 to cell #1
+    &gt; +++++ +++++           add 10 to cell #2 
+    &gt; +++                   add  3 to cell #3
+    &gt; +                     add  1 to cell #4
+    &lt;&lt;&lt;&lt; -                  decrement counter (cell #0)
+]                   
+&gt; ++ .                  print 'H'
+&gt; + .                   print 'e'
++++++ ++ .              print 'l'
+.                       print 'l'
++++ .                   print 'o'
+&gt; ++ .                  print ' '
+&lt;&lt; +++++ +++++ +++++ .  print 'W'
+&gt; .                     print 'o'
++++ .                   print 'r'
+----- - .               print 'l'
+----- --- .             print 'd'
+&gt; + .                   print '!'
+&gt; .                     print '\n'</textarea>
+					<div class="field-row controls-row">
+						<button id="brainfuck-clear" type="button">Clear</button>
+					</div>
+					<div class="field-row controls-row">
+						<button id="brainfuck-run" type="button">Run</button>
+						<button id="brainfuck-pause" type="button">Pause</button>
+						<button id="brainfuck-stop" type="button">Stop</button>
+						<button id="brainfuck-init" type="button">(Re-)initialise</button>
+						<button id="brainfuck-step" type="button">Step</button>
+						<button id="brainfuck-step-auto" type="button">Step auto:</button>
+						<input title="Interval (ms)" type="number" placeholder="interval (ms)" value="100" id="brainfuck-step-interval">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Execution</legend>
+					<output class="program-position-box">
+						<span id="program-position"></span>
+					</output>
+				</fieldset>
+			</form>
+			<form action="" method="post">
+				<fieldset>
+					<legend>Program output</legend>
+					<div class="output-area">
+						<textarea id="output-display" readonly></textarea>
+						<aside>
+							<h2>Memory view</h2>
+							<div class="sunken-panel memory-panel">
+								<table id="memory-table">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Dec</th>
+											<th>Hex</th>
+											<th>Bin</th>
+											<th>ASCII</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</aside>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div class="status-bar">
+			<p class="status-bar-field">Status: <span id="status-display">Ready</span></p>
+			<p class="status-bar-field" id="pointer-display">Ptr: 0 / 512</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/brainfuck.js"></script>
+</body>
+
+</html>

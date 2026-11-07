@@ -1,0 +1,165 @@
+/* brainfuck.css - Windows 98 theme on top of 98.css */
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: #008080;
+	margin: 0;
+	padding: 16px;
+	box-sizing: border-box;
+}
+
+.main-window {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.window-body {
+	margin: 8px;
+}
+
+fieldset {
+	margin-bottom: 10px;
+}
+
+fieldset legend {
+	font-weight: bold;
+	font-family: "Pixelated MS Sans Serif", Arial;
+	font-size: 11px;
+	-webkit-font-smoothing: none;
+}
+
+#brainfuck-input {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	height: 300px;
+	font-family: "Consolas", "monaco", monospace;
+	font-size: 12px;
+	line-height: 12px;
+	resize: vertical;
+}
+
+.controls-row {
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 8px;
+}
+
+.controls-row > * {
+	margin-left: 0;
+}
+
+#brainfuck-input + .controls-row {
+	margin-top: 10px;
+}
+
+.title-bar-controls button {
+	align-self: center;
+}
+
+#brainfuck-step-interval {
+	width: 80px;
+	height: 22px;
+}
+
+#program-position {
+	color: #222;
+	font-size: 13px;
+	line-height: 20px;
+	letter-spacing: 0.2em;
+	word-break: break-all;
+}
+
+.program-position-box {
+	display: block;
+	min-height: 20px;
+	padding: 2px 4px;
+	background: #fff;
+	box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+}
+
+.current-instruction {
+	font-weight: bold;
+	color: #fff;
+	background-color: #000080;
+	padding: 1px 4px;
+	letter-spacing: 0;
+}
+
+.output-area {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: flex-start;
+}
+
+#output-display {
+	flex: 1 1 500px;
+	min-width: 260px;
+	height: 288px;
+	box-sizing: border-box;
+	font-family: "Consolas", "monaco", monospace;
+	font-size: 12px;
+	line-height: 12px;
+	color: #c0c0c0;
+	background-color: #000;
+	box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+}
+
+aside {
+	flex: 0 0 350px;
+	min-width: 260px;
+}
+
+aside h2 {
+	margin: 0 0 6px 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.memory-panel {
+	max-height: 288px;
+	overflow: auto;
+}
+
+#memory-table {
+	width: 100%;
+}
+
+#memory-table th,
+#memory-table td {
+	font-family: "Consolas", "monaco", monospace;
+	font-size: 11px;
+}
+
+#memory-table td {
+	text-align: center;
+}
+
+#memory-table .current-address td {
+	background-color: #000080;
+	color: #fff;
+}
+
+.status-bar {
+	margin-top: 8px;
+}
+
+.status-bar-field {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+	aside {
+		flex-basis: 100%;
+	}
+
+	#output-display {
+		height: 200px;
+	}
+}
